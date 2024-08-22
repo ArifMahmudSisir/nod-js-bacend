@@ -65,5 +65,14 @@ router.get('/me', auth, async (req, res) => {
     res.status(500).send('Server error');
   }
 });
+router.get('/test', auth, (req, res) => {
+  res.json({ msg: 'Token is valid!' });
+});
+// Logout User
+router.post('/logout', (req, res) => {
+  res.json({ msg: 'Logout successful' });
+  // Client-side code should handle token removal
+});
+
 
 module.exports = router;
